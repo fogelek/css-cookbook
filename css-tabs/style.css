@@ -1,0 +1,63 @@
+.container {
+  margin: 0;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.container > input {
+  display: none;
+}
+
+.container > label {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0 0.5rem 0.25rem;
+}
+
+.container .tabs {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 1rem;
+}
+
+.container .tabs > div {
+  display: none;
+}
+
+.container input:checked + label {
+  border-bottom-color: black;
+}
+
+.container input:checked:nth-of-type(1) ~ .tabs > div:nth-child(1) {
+  display: block;
+}
+
+.container input:checked:nth-of-type(2) ~ .tabs > div:nth-child(2) {
+  display: block;
+}
+
+.container input:checked:nth-of-type(3) ~ .tabs > div:nth-child(3) {
+  display: block;
+}
+
+.container input:checked:nth-of-type(4) ~ .tabs > div:nth-child(4) {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */
