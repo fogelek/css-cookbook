@@ -1,5 +1,4 @@
-.container {
-  margin: 0;
+.tab-container {
   padding: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,50 +13,50 @@
           column-gap: 1rem;
 }
 
-.container > input {
+.tab-container > input[type="radio"] {
   display: none;
 }
 
-.container > label {
-  -ms-grid-row: 1;
-  grid-row: 1;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
+.tab-container > label {
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  -webkit-transition: border 300ms ease;
+  transition: border 300ms ease;
 }
 
-.container .tabs {
+.tab-container .tabs {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  margin: 1rem;
+  padding: 0.5rem;
 }
 
-.container .tabs > div {
+.tab-container .tabs > * {
   display: none;
 }
 
-.container input:checked + label {
+.tab-container > input[type="radio"]:checked + label {
   border-bottom-color: black;
 }
 
-.container input:checked:nth-of-type(1) ~ .tabs > div:nth-child(1) {
+.tab-container > input[type="radio"]:checked:nth-of-type(1) ~ .tabs > *:nth-child(1) {
   display: block;
 }
 
-.container input:checked:nth-of-type(2) ~ .tabs > div:nth-child(2) {
+.tab-container > input[type="radio"]:checked:nth-of-type(2) ~ .tabs > *:nth-child(2) {
   display: block;
 }
 
-.container input:checked:nth-of-type(3) ~ .tabs > div:nth-child(3) {
+.tab-container > input[type="radio"]:checked:nth-of-type(3) ~ .tabs > *:nth-child(3) {
   display: block;
 }
 
-.container input:checked:nth-of-type(4) ~ .tabs > div:nth-child(4) {
+.tab-container > input[type="radio"]:checked:nth-of-type(4) ~ .tabs > *:nth-child(4) {
   display: block;
 }
 /*# sourceMappingURL=style.css.map */
