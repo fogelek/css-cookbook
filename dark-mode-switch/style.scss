@@ -5,8 +5,8 @@ $bg-dark: #191f2f;
 $handle-off: rgb(238, 203, 85);
 $handle-on: #ccc;
 $handle-craters: #999;
-$animation-time: 700ms;
-$transition-time: 350ms;
+$animation-time: var(--animation-time);
+$transition-time: var(--transition-time);
 
 @mixin animate($animation) {
   animation: $animation;
@@ -34,6 +34,14 @@ body {
 }
 
 .switch {
+  --animation-time: 1000ms;
+  --transition-time: 500ms;
+
+  @media (prefers-reduced-motion) {
+    --animation-time: 0;
+    --transition-time: 0;
+  }
+
   display: flex;
   cursor: pointer;
   background-color: $bg-light;
