@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Dark Mode Switch</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/dark-mode-switch/dark-mode-switch.css" />
   </head>
   <body>
     <svg class="defs" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
@@ -73,14 +73,14 @@
       <div class="switch off init">
         <svg viewBox="0 0 200 40" class="background">
           <use href="#bg" class="background-shades" />
-          <use href="#stars" class="stars" />
           <g class="clouds">
+            <use href="#stars" class="stars" />
             <use href="#cloud-outer" class="cloud-outer" />
             <use href="#cloud-inner" class="cloud-inner" />
           </g>
         </svg>
         <div class="handle">
-          <svg viewBox="0 0 20 20" width="3rem" height="3rem" class="craters">
+          <svg viewBox="0 0 20 20" width="3em" height="3em" class="craters">
             <circle r="3.5" cx="7" cy="12" />
             <circle r="2.5" cx="11" cy="5" />
             <circle r="2" cx="14.5" cy="12" />
@@ -89,25 +89,9 @@
         <span class="shadow-container"></span>
       </div>
     </div>
-    <script>
-      const switches = document.getElementsByClassName("switch");
-      for (const i in switches) {
-        const sw = switches[i];
-        sw.onclick = () => {
-          if (sw.classList.contains("init")) {
-            sw.classList.remove("init");
-          }
-          if (sw.classList.contains("on")) {
-            sw.classList.remove("on");
-            sw.classList.add("off");
-            document.body.classList.remove("dark");
-          } else {
-            sw.classList.remove("off");
-            sw.classList.add("on");
-            document.body.classList.add("dark");
-          }
-        };
-      }
-    </script>
+    <script
+      type="application/javascript"
+      src="/dark-mode-switch/dark-mode-switch.js"
+    ></script>
   </body>
 </html>
